@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=Fauna+One&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  margin: auto;
+}
+.genres-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.genre-item {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
