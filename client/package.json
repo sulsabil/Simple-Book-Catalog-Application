@@ -25,6 +25,7 @@
     "react-router-dom": "^6.21.0",
     "redux": "^4.2.1",
     "redux-persist": "^6.0.0",
+    "simple-book-catalog-application": "file:..",
     "swiper": "^11.0.5"
   },
   "devDependencies": {

@@ -8,7 +8,7 @@ import { YourBookType } from "../types/bookType";
 import Items from "../src/components/Items";
 
 export default function Home() {
-  const [ratings, setRatings] = useState([2, 3, 4, 5, 6]);
+  const [ratings] = useState([2, 3, 4, 5, 6]);
   const [totalRatings, setTotalRatings] = useState<number>(
     ratings.reduce((acc, rating, index) => acc + rating * (index + 1), 0) /
       ratings.length || 0

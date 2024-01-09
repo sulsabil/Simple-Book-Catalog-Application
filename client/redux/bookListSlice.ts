@@ -68,10 +68,8 @@ const bookSlice = createSlice({
       })
       .addCase(createBookData.fulfilled, (state, action) => {
         state.currentBook = action.payload;
-      })
-      .addCase(fetchBookDataDetails.fulfilled, (state, action) => {
-        state.currentBook = [action.payload]; // Assuming action.payload is the book details
       });
+     
   },
 });
 

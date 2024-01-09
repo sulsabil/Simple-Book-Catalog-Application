@@ -1,22 +1,24 @@
-import express from "express";
+import express from 'express';
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import bookRouter from "./book/bookRoute.js";
 import cors from "cors";
 import dotenv from "dotenv";
 import userRouter from "./user/userRouter.js";
+import path from 'path';
 
 dotenv.config();
 
 mongoose
-  .connect(process.env.MONGO)
+.connect(process.env.MONGO )
   .then(() => {
     console.log("Connection made with MongoDB");
   })
   .catch((error) => {
     console.error("Error connecting to MongoDB:", error);
   });
-  const __dirname = path.resolve();
+
+const __dirname = path.resolve();
 const app = express();
 
 app.use(cors());
@@ -30,11 +32,11 @@ app.use("/api/auth", userRouter);
 app.get("/test", (req, res) => {
   res.send("Testing...");
 });
-app.use(express.static(path.join(__dirname, '/client/dist')));
+app.use(express.static(path.join(__dirname, "/client/dist")));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
-})
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+});
 
 // Error handling middleware
 app.use((err, req, res, next) => {
